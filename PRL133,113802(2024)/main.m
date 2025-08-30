@@ -30,7 +30,9 @@ alpha = cacu_alpha(p_x_val, p_y_val);
 Phi_0 = atan(1 ./ (p_x_val + 1j* p_y_val));
 ita1 = [-sin(Phi_0/2), cos(Phi_0/2)];
 ita2 = [cos(Phi_0/2), sin(Phi_0/2)];
+
 rho_norm = rho(nn,:)/norm(rho(nn,:));
+
 f1(nn) = fidlity(ita1,rho(nn,:));
 f2(nn) = fidlity(ita2,rho(nn,:));
 end
