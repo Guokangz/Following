@@ -1,55 +1,91 @@
-# Reproduction of Picocavity-Enhanced Raman Spectroscopy Mechanism (H₂/Ag(111))
+# Mechanism of Picocavity-Enhanced Raman Spectroscopy: H₂/Ag(111)
 
 **基于第一性原理与有限元仿真的 H₂/Ag(111) 皮腔增强拉曼光谱机制研究**
 
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 ![DFT](https://img.shields.io/badge/DFT-Quantum_ESPRESSO-blue)
-![FEM](https://img.shields.io/badge/FEM-COMSOL-red)
-![Python](https://img.shields.io/badge/Post_Processing-Python-green)
+![Lang](https://img.shields.io/badge/Scripts-Python_3-green)
 
 ## 📖 简介 (Introduction)
 
 本项目旨在复现并解析发表于 **Physical Review Letters** 上的工作 [*Phys. Rev. Lett. 134, 206901 (2025)*]。
 
-该研究主要关注 **LT-TERS（低温针尖增强拉曼光谱）** 实验中观测到的 H₂ 与 D₂ 分子在 Ag(111) 表面截然不同的光谱响应（反常同位素效应）。本项目通过跨尺度的计算模拟手段，从微观电子结构和宏观电磁场两个维度揭示了其物理机制。
+针对实验中观测到的 H₂ 与 D₂ 分子在 Ag(111) 表面截然不同的光谱响应（反常同位素效应），本项目通过 **DFT (Quantum ESPRESSO)** 计算了吸附势能面与电子结构，并结合 **FEM (COMSOL)** 理论结果，揭示了微观构型差异与宏观皮腔场增强的耦合机制。
 
-## 🚀 主要工作 (Key Highlights)
+> **注意**：本仓库主要包含 DFT 计算的输入文件 (`.in`) 和后处理脚本 (`.py`)。FEM (COMSOL) 仿真由于二进制文件过大未上传，仅包含结果数据/图片。
 
-1.  **微观电子结构 (DFT):**
-    *   使用 **Quantum ESPRESSO** 构建 H₂/Ag(111) 物理吸附模型。
-    *   采用 **PBE + DFT-D3** 范德华力校正，精确计算吸附势能面。
-    *   确认 H₂ 的基态为**平躺 (Flat)** 构型，吸附能约 **-57.4 meV**。
-    *   计算**差分电荷密度 (CDD)**，揭示了泡利排斥 (Pauli Repulsion) 和电子回推效应。
-
-2.  **宏观电磁场 (FEM):**
-    *   使用 **COMSOL Multiphysics** (Wave Optics) 建立 2D 轴对称针尖模型。
-    *   模拟了带有 **0.5 nm 原子级突起** 的皮腔 (Picocavity) 效应。
-    *   验证了 **$10^{14}$** 量级的局域场增强因子及亚纳米级的空间局域性。
-
-3.  **数据可视化:**
-    *   使用 Python (Matplotlib/NumPy) 编写脚本，绘制出版级质量的势能扫描曲线与场增强曲线。
-
-## 📂 仓库结构 (Repository Structure)
-
-为了保持仓库整洁，本项目仅包含输入文件与核心脚本。
+## 📂 项目结构 (Repository Structure)
 
 ```text
 .
-├── DFT_Calculations/           # Quantum ESPRESSO 计算文件
-│   ├── inputs/                 # .in 输入文件
-│   │   ├── scf_flat_scan/      # 平躺构型势能面扫描
-│   │   ├── scf_vertical_scan/  # 垂直构型扫描 (对比组)
-│   │   └── charge_density/     # 差分电荷密度计算 (Total, Slab, Mol)
-│   └── scripts/
-│       └── run_scan.sh         # 自动化 PES 扫描 Shell 脚本
+├── scf_scan/               # [核心] 最终版平躺构型势能面扫描 (0.25Å 步长)
+│   ├── scan_flat_*.in      # 不同高度下的 SCF 输入文件
+│   └── 1.py                # 数据提取与绘图脚本
 │
-├── FEM_Simulations/            # COMSOL 仿真相关
-│   ├── data/                   # 导出的电场增强数据 (.txt)
-│   └── README.md               # 仿真参数说明 (2D Axisymmetric, Scattering Field)
+├── scan_10_v/              # [核心] 垂直构型势能面扫描 (用于对比)
+│   ├── ag_h2_*_6k.relax.in # 垂直构型输入文件
+│   └── ...
 │
-├── Visualization/              # Python 绘图代码
-│   ├── plot_pes.py             # 绘制吸附势能曲线 (Flat vs Vertical)
-│   ├── plot_field.py           # 绘制场增强曲线 (Center vs Neighbor)
-│   └── data/                   # 绘图所需的源数据
+├── charge/                 # [核心] 差分电荷密度计算 (CDD)
+│   ├── charge_v/           # 垂直构型电荷密度
+│   ├── H2.in, Ag.in...     # 平躺构型电荷密度计算 (Total/Slab/Mol)
+│   ├── pp_*.in             # 后处理输入文件 (生成 .cube)
+│   └── calc_diff.py        # 差分电荷计算脚本 (Total - Slab - Mol)
 │
+├── ag_pes_scan/            # 高密度扫描测试数据 (20个点)
+│
+├── Eslab/ & EH2/ & Etotal/ # 基准能量计算 (孤立表面、孤立分子、弛豫测试)
+│
+├── old1114/                # 早期测试与收敛性测试数据 (Archive)
+│
+├── *.png                   # [结果] 势能面扫描曲线图与结果可视化
 └── README.md
+```
+
+## 🚀 主要结果 (Key Results)
+
+### 1. 物理吸附势能面 (PES)
+*   **文件**: `H2_on_Ag111_PES_Final.png`
+*   **结论**: H₂ 在 Ag(111) 表面的基态为**平躺 (Flat)** 构型，吸附能约为 **-57.4 meV**。相比之下，垂直构型吸附能较浅 (~ -30 meV)，证明了分子在低温下倾向于平躺吸附，且存在显著的转动势垒。
+
+### 2. 差分电荷密度 (CDD)
+*   **路径**: `charge/`
+*   **结论**: 界面处观察到明显的电子耗尽（Depletion，青色）与两侧的电子积聚（Accumulation，黄色），证实了**泡利排斥 (Pauli Repulsion)** 和电子回推效应是弱物理吸附的主要成因。
+
+### 3. 皮腔场增强 (FEM Theory)
+*   虽然未上传 `.mph` 文件，但仿真结果证实原子级突起将光场压缩至 < 1 nm 区域，产生高达 **$10^{14}$** 的电场增强 ($|E|^4$)，解释了 H₂ (低密度/自由) 与 D₂ (高密度/受限) 的光谱差异。
+
+## 🛠️ 使用说明 (Usage)
+
+### 环境依赖
+*   Quantum ESPRESSO (v7.0+)
+*   Python 3.x (`numpy`, `matplotlib`, `scipy`)
+
+### 运行势能面扫描
+进入 `scf_scan` 目录，使用脚本批量提交计算：
+```bash
+cd scf_scan
+bash 1.sh
+```
+
+### 绘制结果图
+使用根目录或子目录下的 Python 脚本读取输出数据并绘图：
+```bash
+python scf_scan/1.py
+```
+
+### 计算差分电荷
+进入 `charge` 目录，依次运行 SCF 计算、PP 后处理，最后运行 Python 脚本做减法：
+```bash
+cd charge
+# 1. 运行 pw.x (Total, Ag, H2)
+# 2. 运行 pp.x (提取电荷)
+python calc_diff.py  # 生成 rho_diff.cube
+```
+
+## 📝 引用 (References)
+*   [1] A. Shiotari, et al., *Phys. Rev. Lett.* **134**, 206901 (2025).
+
+## 🤝 作者 (Author)
+*   Course Project: 2025 PhD Condensed Matter Theory
+*   Author: [Your Name]
