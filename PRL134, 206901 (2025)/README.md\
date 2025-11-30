@@ -1,0 +1,55 @@
+# Reproduction of Picocavity-Enhanced Raman Spectroscopy Mechanism (H₂/Ag(111))
+
+**基于第一性原理与有限元仿真的 H₂/Ag(111) 皮腔增强拉曼光谱机制研究**
+
+![Status](https://img.shields.io/badge/Status-Completed-success)
+![DFT](https://img.shields.io/badge/DFT-Quantum_ESPRESSO-blue)
+![FEM](https://img.shields.io/badge/FEM-COMSOL-red)
+![Python](https://img.shields.io/badge/Post_Processing-Python-green)
+
+## 📖 简介 (Introduction)
+
+本项目旨在复现并解析发表于 **Physical Review Letters** 上的工作 [*Phys. Rev. Lett. 134, 206901 (2025)*]。
+
+该研究主要关注 **LT-TERS（低温针尖增强拉曼光谱）** 实验中观测到的 H₂ 与 D₂ 分子在 Ag(111) 表面截然不同的光谱响应（反常同位素效应）。本项目通过跨尺度的计算模拟手段，从微观电子结构和宏观电磁场两个维度揭示了其物理机制。
+
+## 🚀 主要工作 (Key Highlights)
+
+1.  **微观电子结构 (DFT):**
+    *   使用 **Quantum ESPRESSO** 构建 H₂/Ag(111) 物理吸附模型。
+    *   采用 **PBE + DFT-D3** 范德华力校正，精确计算吸附势能面。
+    *   确认 H₂ 的基态为**平躺 (Flat)** 构型，吸附能约 **-57.4 meV**。
+    *   计算**差分电荷密度 (CDD)**，揭示了泡利排斥 (Pauli Repulsion) 和电子回推效应。
+
+2.  **宏观电磁场 (FEM):**
+    *   使用 **COMSOL Multiphysics** (Wave Optics) 建立 2D 轴对称针尖模型。
+    *   模拟了带有 **0.5 nm 原子级突起** 的皮腔 (Picocavity) 效应。
+    *   验证了 **$10^{14}$** 量级的局域场增强因子及亚纳米级的空间局域性。
+
+3.  **数据可视化:**
+    *   使用 Python (Matplotlib/NumPy) 编写脚本，绘制出版级质量的势能扫描曲线与场增强曲线。
+
+## 📂 仓库结构 (Repository Structure)
+
+为了保持仓库整洁，本项目仅包含输入文件与核心脚本。
+
+```text
+.
+├── DFT_Calculations/           # Quantum ESPRESSO 计算文件
+│   ├── inputs/                 # .in 输入文件
+│   │   ├── scf_flat_scan/      # 平躺构型势能面扫描
+│   │   ├── scf_vertical_scan/  # 垂直构型扫描 (对比组)
+│   │   └── charge_density/     # 差分电荷密度计算 (Total, Slab, Mol)
+│   └── scripts/
+│       └── run_scan.sh         # 自动化 PES 扫描 Shell 脚本
+│
+├── FEM_Simulations/            # COMSOL 仿真相关
+│   ├── data/                   # 导出的电场增强数据 (.txt)
+│   └── README.md               # 仿真参数说明 (2D Axisymmetric, Scattering Field)
+│
+├── Visualization/              # Python 绘图代码
+│   ├── plot_pes.py             # 绘制吸附势能曲线 (Flat vs Vertical)
+│   ├── plot_field.py           # 绘制场增强曲线 (Center vs Neighbor)
+│   └── data/                   # 绘图所需的源数据
+│
+└── README.md
