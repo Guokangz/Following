@@ -1,0 +1,15 @@
+&inputpp
+    prefix = 'Ag'
+    outdir = './'
+    filplot = 'Ag.dat'
+    plot_num = 0
+/
+&plot
+    nfile = 1
+    filepp(1) = 'Ag.dat'
+    weight(1) = 1.0
+    iflag = 3
+    output_format = 6
+    fileout = 'rho_Ag.cube'
+/
+
