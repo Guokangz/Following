@@ -1,0 +1,130 @@
+# 
+# This is the geometry file that corresponds to the current relaxation step.
+# If you do not want this file to be written, set the "write_restart_geometry" flag to .false.
+#  aims_uuid : 2E2A7BFB-3DBE-4B24-AEF4-A1F1D373D726                                
+# 
+  set_vacuum_level        44.182050
+lattice_vector     11.55497333      0.00000000      0.00000000
+lattice_vector      0.00000000     10.00690044      0.00000000
+lattice_vector      0.00000000      0.00000000     65.00000000
+atom       4.76019248      4.80636994      9.63277508 H
+atom       4.88868766      4.83942550     10.37572425 H
+atom       0.00000000      0.00000000      0.00000000 Ag
+  constrain_relaxation .true.
+atom       2.88874000      0.00000000      0.00000000 Ag
+  constrain_relaxation .true.
+atom       5.77750000      0.00000000      0.00000000 Ag
+  constrain_relaxation .true.
+atom       8.66623000      0.00000000      0.00000000 Ag
+  constrain_relaxation .true.
+atom       1.44437000      2.50173000      0.00000000 Ag
+  constrain_relaxation .true.
+atom       4.33311000      2.50173000      0.00000000 Ag
+  constrain_relaxation .true.
+atom       7.22184000      2.50173000      0.00000000 Ag
+  constrain_relaxation .true.
+atom      10.11060000      2.50173000      0.00000000 Ag
+  constrain_relaxation .true.
+atom       0.00000000      5.00345000      0.00000000 Ag
+  constrain_relaxation .true.
+atom       2.88874000      5.00345000      0.00000000 Ag
+  constrain_relaxation .true.
+atom       5.77750000      5.00345000      0.00000000 Ag
+  constrain_relaxation .true.
+atom       8.66623000      5.00345000      0.00000000 Ag
+  constrain_relaxation .true.
+atom       1.44437000      7.50516000      0.00000000 Ag
+  constrain_relaxation .true.
+atom       4.33311000      7.50516000      0.00000000 Ag
+  constrain_relaxation .true.
+atom       7.22184000      7.50516000      0.00000000 Ag
+  constrain_relaxation .true.
+atom      10.11060000      7.50516000      0.00000000 Ag
+  constrain_relaxation .true.
+atom       1.44437000      0.83390900      2.35865000 Ag
+  constrain_relaxation .true.
+atom       4.33311000      0.83390900      2.35865000 Ag
+  constrain_relaxation .true.
+atom       7.22184000      0.83390900      2.35865000 Ag
+  constrain_relaxation .true.
+atom      10.11060000      0.83390900      2.35865000 Ag
+  constrain_relaxation .true.
+atom       0.00000000      3.33563000      2.35865000 Ag
+  constrain_relaxation .true.
+atom       2.88874000      3.33563000      2.35865000 Ag
+  constrain_relaxation .true.
+atom       5.77750000      3.33563000      2.35865000 Ag
+  constrain_relaxation .true.
+atom       8.66623000      3.33563000      2.35865000 Ag
+  constrain_relaxation .true.
+atom       1.44437000      5.83735000      2.35865000 Ag
+  constrain_relaxation .true.
+atom       4.33311000      5.83735000      2.35865000 Ag
+  constrain_relaxation .true.
+atom       7.22184000      5.83735000      2.35865000 Ag
+  constrain_relaxation .true.
+atom      10.11060000      5.83735000      2.35865000 Ag
+  constrain_relaxation .true.
+atom       0.00000000      8.33909000      2.35865000 Ag
+  constrain_relaxation .true.
+atom       2.88874000      8.33909000      2.35865000 Ag
+  constrain_relaxation .true.
+atom       5.77750000      8.33909000      2.35865000 Ag
+  constrain_relaxation .true.
+atom       8.66623000      8.33909000      2.35865000 Ag
+  constrain_relaxation .true.
+atom       0.00058477      1.68574000      4.64091000 Ag
+  constrain_relaxation .true.
+atom       2.88895000      1.68491000      4.64080000 Ag
+  constrain_relaxation .true.
+atom       5.77708000      1.68425000      4.64090000 Ag
+  constrain_relaxation .true.
+atom       8.66559000      1.68479000      4.64088000 Ag
+  constrain_relaxation .true.
+atom       1.44432000      4.18729000      4.64062000 Ag
+  constrain_relaxation .true.
+atom       4.33302000      4.18584000      4.64129000 Ag
+  constrain_relaxation .true.
+atom       7.22057000      4.18656000      4.64137000 Ag
+  constrain_relaxation .true.
+atom      10.10990000      4.18652000      4.64062000 Ag
+  constrain_relaxation .true.
+atom       0.00023522      6.68885000      4.64023000 Ag
+  constrain_relaxation .true.
+atom       2.88933000      6.68801000      4.64129000 Ag
+  constrain_relaxation .true.
+atom       5.77682000      6.68769000      4.64139000 Ag
+  constrain_relaxation .true.
+atom       8.66575000      6.68843000      4.64056000 Ag
+  constrain_relaxation .true.
+atom       1.44541000      9.19017000      4.64093000 Ag
+  constrain_relaxation .true.
+atom       4.33356000      9.18985000      4.64094000 Ag
+  constrain_relaxation .true.
+atom       7.22168000      9.18953000      4.64092000 Ag
+  constrain_relaxation .true.
+atom      10.11090000      9.19054000      4.64006000 Ag
+  constrain_relaxation .true.
+atom       0.00026850      0.01637964      6.93406801 Ag
+atom       2.88906456      0.01634322      6.93506199 Ag
+atom       5.77745094      0.01627007      6.93460128 Ag
+atom       8.66604273      0.01625558      6.93448028 Ag
+atom       1.44459054      2.51865784      6.93489522 Ag
+atom       4.33318255      2.51760554      6.93372109 Ag
+atom       7.22166313      2.51787952      6.93400722 Ag
+atom      10.11039841      2.51802308      6.93457192 Ag
+atom       0.00025614      5.01989652      6.93469695 Ag
+atom       2.88865868      5.01973726      6.93430365 Ag
+atom       5.77742061      5.01952895      6.93340266 Ag
+atom       8.66569568      5.01964500      6.93446161 Ag
+atom       1.44452249      7.52110586      6.93478698 Ag
+atom       4.33276403      7.52169549      6.93375247 Ag
+atom       7.22164631      7.52125040      6.93442792 Ag
+atom      10.11067846      7.52148515      6.93403009 Ag
+# 
+# What follows is the current estimated Hessian matrix constructed by the BFGS algorithm.
+# This is NOT the true Hessian matrix of the system.
+# If you do not want this information here, switch it off using the "hessian_to_restart_geometry" keyword.
+# 
+trust_radius             0.0793419824
+hessian_file
