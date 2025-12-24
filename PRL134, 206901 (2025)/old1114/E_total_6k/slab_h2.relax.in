@@ -1,0 +1,27 @@
+&CONTROL
+   calculation='relax', prefix='ag111_3x3_h2_6k', pseudo_dir='./', outdir='./'
+/
+&SYSTEM
+   ibrav=0, nat=29, ntyp=2, ecutwfc=40.0, ecutrho=200.0,
+   occupations='smearing', smearing='methfessel-paxton', degauss=0.02,
+   vdw_corr = 'dft-d3'
+/
+&ELECTRONS
+   conv_thr=1.0d-7, mixing_beta=0.3
+/
+&IONS
+   ion_dynamics='bfgs'
+/
+CELL_PARAMETERS {angstrom}
+   8.850   0.000   0.000
+  -4.425   7.665   0.000
+   0.000   0.000  25.000
+ATOMIC_SPECIES
+   Ag  107.868  Ag.pbe-n-rrkjus_psl.1.0.0.UPF
+   H    1.008  H.pbe-kjpaw.UPF
+ATOMIC_POSITIONS {crystal}
+
+H      0.4800000   0.4800000   0.3000000   1 1 1
+H      0.5200000   0.5200000   0.3000000   1 1 1
+K_POINTS {automatic}
+   6 6 1 0 0 0
