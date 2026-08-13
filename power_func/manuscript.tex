@@ -1,0 +1,95 @@
+\documentclass{article}
+\title{Accelerating topological quantum state transfers in optomechanical lattices}
+\author{k}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+	This is a simple paragraph at the beginning of the 
+	document. A brief introduction about the main subject.
+\end{abstract}
+\section{Hamitonian}
+We consider a 1D small optomechanical lattice containing three cavities and two mechanical resonators. The Hamiltonian of the system is given by 
+\begin{eqnarray}\label{eq1}
+\hat{H} &=& \sum_{n=1,2,3}[\omega_{c,n}\hat a_n^{\dag}\hat a_n+(\Omega_n\hat a_n^{\dag}e^{-i\omega_{d}t}+\Omega_n^{\ast} \hat a_n e^{i\omega_{d}t})]\nonumber \\
+&& +\sum_{l=1,2}[\omega_{m,l}\hat b_l^{\dag}\hat b_l-g_l(\hat a_l^{\dag}\hat a_l-\hat a_{l+1}^{\dag}\hat a_{l+1})(\hat b_l^{\dag}+\hat b_l)\nonumber\\
+&&+G(\hat a_{l+1}^{\dag}\hat a_l+\hat a_l^{\dag}\hat a_{l+1})].
+\end{eqnarray}
+Where $\hat a_{n}$ and $\hat b_{l}$ are the annihilation operators of the cavity and mechanical resonator, respectively. $\omega_{c,n}$ and $\omega_{m,l}$ are the frequencies of the cavity and mechanical resonator, respectively. $\Omega_{n}$ is the driving strength of the cavity. $\omega_{d}$ is the frequency of the driving field. $g_{l}$ and $G$ are the coupling strengths between the cavity and mechanical resonator, and between the cavities, respectively.
+
+We using driving frequency $\omega_{d}$,to perform the rotating transformation, the hamiltonian can be written as (n=1,l=1):
+\begin{eqnarray}\label{eq2}
+\hat{H}_{n=1,l=1}&=&(\omega_{c,1}-\omega_{d})\hat a_1^{\dag}\hat a_1+\Omega_1\hat a_1^{\dag}+\Omega_1^{\ast}\hat a_1\nonumber \\
+&& +\omega_{m,1}\hat b_1^{\dag}\hat b_1-g_1(\hat a_1^{\dag}\hat a_1-\hat a_2^{\dag}\hat a_2)(\hat b_1^{\dag}+\hat b_1)\nonumber\\
+&&+G(\hat a_2^{\dag}\hat a_1+\hat a_1^{\dag}\hat a_2).
+\end{eqnarray}
+Similarly, the full Hamiltonian can be written as:
+\begin{eqnarray}\label{eq3}
+\hat{H}_{R} &=& \sum_{n=1,2,3}[\Delta_{c,n}\hat a_n^{\dag}\hat a_n+(\Omega_n \hat a_n^{\dag}+\Omega_n^{\ast} \hat a_n)]\nonumber \\
+&& +\sum_{l=1,2}[\omega_{m,l}\hat b_l^{\dag}\hat b_l-g_l(\hat a_l^{\dag}\hat a_l-\hat a_{l+1}^{\dag}\hat a_{l+1})(\hat b_{l}^{\dag}+\hat b_{l})\nonumber\\
+&&+G(\hat a_{l+1}^{\dag}\hat a_n+\hat a_l^{\dag}\hat a_{l+1})].
+\end{eqnarray}
+\section{Standard linearization process}
+Optomechanical system could be described by quantum Langevin equations:
+\begin{equation}
+\dot{\mathcal{O}}=\frac{{\rm i}}{\hbar}\left[H,\mathcal{O}\right]-\frac{\gamma}{2}\mathcal{O}.
+\end{equation}
+We can obtain the following quantum Langevin equations for the operators $\hat a_n$ and $\hat b_l$:
+\begin{eqnarray}\label{eq4}
+\dot{\hat a}_1 &=& -[\gamma_1+{\rm i}\Delta_{c,1}-{\rm i}g_1(\hat b_1^{\dag}+\hat b_1)]\hat a_1-{\rm i}(\hat a_2-\Omega_1)\nonumber\\
+\dot{\hat a}_2 &=& -[\gamma_2+{\rm i}\Delta_{c,2}+{\rm i}g_1(\hat b_1^{\dag}+\hat b_1)-{\rm i}g_2(\hat b_2^{\dag}+\hat b_2)]\hat a_2-{\rm i}(\hat a_1-\Omega_2+\hat a_3)\nonumber\\
+\dot{\hat a}_3 &=& -[\gamma_3+{\rm i}\Delta_{c,3}+{\rm i}g_2(\hat b_2^{\dag}+\hat b_2)]\hat a_3-{\rm i}(\hat a_2-\Omega_3)\nonumber\\
+\dot{\hat b}_1 &=& -[\gamma_4+{\rm i}\omega_{m,1}\hat b_1-{\rm i}g_1(\hat a_1^{\dag}\hat a_1-\hat a_2^{\dag}\hat a_2)] \nonumber\\
+\dot{\hat b}_2 &=& -[\gamma_5+{\rm i}\omega_{m,2}\hat b_2-{\rm i}g_2(\hat a_2^{\dag}\hat a_2-\hat a_3^{\dag}\hat a_3)] .
+\end{eqnarray}
+Rewriting the operators as $\hat a_n= \langle \hat a_n \rangle +\delta \hat a_n = \alpha_n +\delta \hat a_n$ and $\hat b_n= \langle \hat b_n \rangle +\delta \hat b_n = \beta_n +\delta \hat b_n$:
+\begin{eqnarray}\label{eq5}
+\dot{\alpha_1}+\delta\dot{\hat a}_1 &=& -[\gamma_1+{\rm i}\Delta_{c,1}-{\rm i}g_1(\beta_1^\ast+\delta b_1^\dag +\beta_1+\delta b_1)](\alpha_1+\delta\hat a_1)\nonumber\\
+&&-{\rm i}(\alpha_2+\delta\hat a_2-\Omega_1)\nonumber\\
+\dot{\alpha_2}+\delta\dot{\hat a}_2 &=& -[\gamma_2+{\rm i}\Delta_{c,2}+{\rm i}g_1(\beta_1^\ast+\delta b_1^\dag +\beta_1+\delta b_1)\nonumber\\
+&&-{\rm i}g_2(\beta_2^\ast+\delta b_2^\dag +\beta_2+\delta b_2)](\alpha_2+\delta\hat a_2)\nonumber\\
+&& -{\rm i}(\alpha_2+\delta\hat a_1-\Omega_2+\alpha_3+\delta\hat a_3) \nonumber \\
+\dot{\alpha_3}+\delta\dot{\hat a}_3 &=& -[\gamma_3+{\rm i}\Delta_{c,3}+{\rm i}g_2(\beta_2^\ast+\delta\hat b_2^\dag +\beta_2+\delta\hat b_2)](\alpha_3+\delta\hat a_3)\nonumber\\
+&&-{\rm i}(\alpha_3+\delta\hat a_3-\Omega_3)\nonumber\\
+\dot\beta_1+\delta\dot{\hat b}_1 &=& -[\gamma_4+{\rm i}\omega_{m,1}(\beta_1+\delta \hat b_1)-{\rm i}g_1(\alpha_1^\ast+\delta\hat a_1^\dag)(\alpha_1+\delta\hat a_1)\nonumber\\
+&&-{\rm i}g_1(\alpha_2^\ast+\delta\hat a_2^\dag)(\alpha_2+\delta \hat a_2)]\nonumber\\
+\dot\beta_2+\delta\dot{\hat b}_2 &=& -[\gamma_5+{\rm i}\omega_{m,2}(\beta_2+\delta \hat b_2)-{\rm i}g_2(\alpha_2^\ast+\delta\hat a_2^\dag)(\alpha_2+\delta\hat a_2)\nonumber\\
+&&-{\rm i}g_2(\alpha_3^\ast+\delta\hat a_3^\dag)(\alpha_3+\delta\hat a_3)].
+\end{eqnarray}
+By defining the system operator as its mean plus the fluctuation of the operator, the second-order terms are ignored.We can obtain the Langevin equations corresponding to the operator mean:
+\begin{eqnarray}\label{eq6}
+\dot\alpha_1 &=& -[\gamma_1+{\rm i}\Delta_{c,1}-{\rm i}g_1(\beta_1^\ast+\beta_1)]\alpha_1-{\rm i}(\alpha_2-\Omega_1)\nonumber\\
+\dot\alpha_2 &=& -[\gamma_2+{\rm i}\Delta_{c,2}+{\rm i}g_1(\beta_1^\ast+\beta_1)-{\rm i}g_2(\beta_2^\ast+\beta_2)]\alpha_2-{\rm i}(\alpha_1-\Omega_2+\alpha_3)\nonumber\\
+\dot\alpha_3 &=& -[\gamma_3+{\rm i}\Delta_{c,3}+{\rm i}g_2(\beta_2^\ast+\beta_2)]\alpha_3-{\rm i}(\alpha_2-\Omega_3)\nonumber\\
+\dot\beta_1 &=& -[\gamma_4+{\rm i}\omega_{m,1}\beta_1-{\rm i}g_1(\alpha_1^\ast\alpha_1-\alpha_2^\ast\alpha_2)]\nonumber\\
+\dot\beta_2 &=& -[\gamma_5+{\rm i}\omega_{m,2}\beta_2-{\rm i}g_2(\alpha_2^\ast\alpha_2-\alpha_3^\ast\alpha_3)].
+\end{eqnarray}
+and the Langevin equations corresponding to the fluctuation operator:
+\begin{eqnarray}\label{eq7}
+\delta\dot{\hat a}_1 &=& -[\gamma_1+{\rm i}\Delta_{c,1}-{\rm i}g_1(\beta_1^\ast+\beta_1)]\delta\hat a_1-{\rm i}g_1(\delta \hat b_1^{\dag}+\delta\hat b_1)\alpha_1-{\rm i}\delta\hat a_2\nonumber\\
+\delta\dot{\hat a}_2 &=& -[\gamma_2+{\rm i}\Delta_{c,2}+{\rm i}g_1(\beta_1^\ast+\beta_1)-{\rm i}g_2(\beta_2^\ast+\beta_2)]\delta\hat a_2\nonumber\\
+&&+[{\rm i}g_1(\delta \hat b_1^{\dag}+\delta\hat b_1)-{\rm i}g_2(\delta\hat b_2^{\dag}+\delta\hat b_2)]\alpha_2-{\rm i}\delta\hat a_1-{\rm i}\delta\hat a_3\nonumber\\
+\delta\dot{\hat a}_3 &=& -[\gamma_3+{\rm i}\Delta_{c,3}+{\rm i}g_2(\beta_2^\ast+\beta_2)]\delta\hat a_3-{\rm i}g_2(\delta \hat b_2^{\dag}+\delta\hat b_2)\alpha_3-{\rm i}\delta\hat a_2\nonumber\\
+\delta\dot{\hat b}_1 &=& -[\gamma_4+{\rm i}\omega_{m,1}\delta\hat b_1\nonumber\\
+&&-{\rm i}g_1(\alpha_1^\ast\alpha_1-\alpha_2^\ast\alpha_2+\alpha_1^\ast\delta\hat a_1+\alpha_1\delta\hat a_1^{\dag}-\alpha_2^\ast\delta\hat a_2-\alpha_2\delta\hat a_2^{\dag})]\nonumber\\
+\delta\dot{\hat b}_2 &=& -[\gamma_5+{\rm i}\omega_{m,2}\delta\hat b_2\nonumber\\
+&&-{\rm i}g_2(\alpha_2^\ast\alpha_2-\alpha_3^\ast\alpha_3+\alpha_2^\ast\delta\hat a_2+\alpha_2\delta\hat a_2^{\dag}-\alpha_3^\ast\delta\hat a_3-\alpha_3\delta\hat a_3^{\dag})].
+\end{eqnarray}
+After linearization, the system Hamiltonian corresponding to the Langevin equations of the fluctuation operator is obtained as
+\begin{eqnarray}\label{eq8}
+\hat{H}_L &=& \sum_{n=1,2,3}[\Delta_{c,n}\hat a_n^{\dag}\hat a_n]+\sum_{l=1,2}[\omega_{m,l}\hat b_l^{\dag}\hat b_l-g_l(\alpha_l^{\ast}\hat a_l+\alpha_l \hat a_l^{\dag}-\alpha_{l+1}^{\ast}\hat a_{l+1}\nonumber \\ 
+&&-\alpha_{l+1}\hat a_{l+1}^{\dag})(\hat b_l^{\dag}+\hat b_l)+G(a_{l+1}^{\dag}\hat a_l+a_l^{\dag}\hat a_{l+1})].
+\end{eqnarray}
+where $\Delta_{c,n}$ are the effective detuning of the cavity and the driving fields orginating from optomechanical coupling, respectively, Then we perform rotating transformation with respect to $\Delta_{c,n}\hat a_n^{\dag}\hat a_n$ and $\omega_{m,l}\hat b_l^{\dag}\hat b_l$ to obtain the Hamiltonian in the rotating frame:
+\begin{eqnarray}\label{eq9}
+\hat H_{L}^{(1)} &=& \sum_{n=1,2}[-G_{n}'\hat a_{n}^{\dag}\hat b_{n}e^{{\rm i}(\Delta_{c,n}-\omega_{m,n})t}\nonumber\\
+&& -G_{n}'\hat a_{n}^{\dag}\hat b_{n}^{\dag}e^{{\rm i}(\Delta_{c,n}+\omega_{m,n})t} \nonumber \\
+&& +G_{n+1}'\hat a_{n+1}^{\dag}\hat b_{n}e^{{\rm i}(\Delta_{c,n+1}-\omega_{m,n})t} \nonumber \\
+&& +G_{n+1}'\hat a_{n+1}^\dag\hat b_n^\dag e^{{\rm i}(\Delta_{c,n+1}+\omega_{m,n})t}+Ga_{n+1}^\dag \hat a_n]+\mathrm{H.c.}
+\end{eqnarray} 
+where $G_{n}'=g_n\alpha_n$ are the effective optomechanical coupling  of the cavity.Under red-detuning resonant condition, the counter rotating wave terms  can be removed.The Hamiltonian becomes:
+\begin{eqnarray}\label{eq10}
+\hat H=\sum_{n=1,2}[-G_n'\hat a_n^{\dag}\hat b_n+G_{n+1}'\hat a_{n+1}^{\dag} \hat b_n + G a_{n+1}^{\dag}\hat a_n]+\mathrm{H.c.}
+\end{eqnarray}
+When $G = 0$,the above Hamiltonian is equivalent to a standard SSH-type tight-binding Hamiltonian possessing only the nearest-neighboring couplings, 
+\end{document}
