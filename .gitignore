@@ -1,0 +1,5 @@
+# power_func LaTeX build artifacts
+power_func/*.aux
+power_func/*.log
+power_func/*.bbl
+power_func/*.synctex.gz
