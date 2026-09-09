@@ -1,0 +1,24 @@
+{
+  "methods": {
+    "A": "linear paper Eqs. (34)/(38)",
+    "B": "PRL mean-field equations at first order / infinitesimal CW"
+  },
+  "parameters": {
+    "omega_c": 0.0,
+    "omega_0": 0.0,
+    "kappa": 0.1,
+    "sqrtN_g": 2.0,
+    "mean_field_gamma_population": 0.1,
+    "mean_field_gamma_phi": 0.2,
+    "linear_paper_gamma": 0.30000000000000004
+  },
+  "convention_identity": "gamma_linear = gamma_population + gamma_phi",
+  "phase_identity": "D^R = i (alpha/input) because the PRL cavity equation uses -input",
+  "metrics": {
+    "max_complex_green_difference": 0.0,
+    "max_transmission_difference": 0.0,
+    "full_nonlinear_weak_cw_vs_linear_response_max_difference": 7.514385630712764e-09,
+    "weak_cw_max_trace_error": 0.0,
+    "weak_cw_min_density_eigenvalue": 0.0
+  }
+}

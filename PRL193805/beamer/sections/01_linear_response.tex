@@ -1,0 +1,259 @@
+\begin{frame}{微观模型：分子 Hamiltonian 与腔场偶极耦合}
+  \setlength{\abovedisplayskip}{0pt}
+  \setlength{\belowdisplayskip}{0pt}
+  \[
+    H=H_0+V,
+    \quad
+    H_0=H_{\mathrm{ph}}+H_{\mathrm{mol}},
+    \quad
+    H_{\mathrm{ph}}=\hbar\omega_{\mathrm{ph}}a^\dagger a,
+  \]
+
+  \[
+    V=-\physmark{Plum}{p4lambda}{\hbar\lambda}
+    (a+a^\dagger)
+    \physmark{Bittersweet}{p4mu}{\hat\mu},
+    \quad
+    \hat\mu=\sum_{i=1}^{N}\hat\mu_i(\bm q_i,\bm Q_i),
+    \quad
+    \hbar\lambda=
+    \sqrt{\tfrac{\hbar\omega_{\mathrm{ph}}}{2\epsilon_0V}}.
+  \]
+  \begin{tikzpicture}[overlay,remember picture,>=stealth,
+      nodes={align=center,inner ysep=1pt,font=\scriptsize},<-]
+    \path (p4lambda.south) ++ (-1.5,-0.4em)
+      node[anchor=north,color=Plum!85] (p4lambdatext)
+      {\textsf{\footnotesize 真空腔场耦合强度}};
+    \draw[color=Plum] (p4lambda.south) |- (p4lambdatext.north);
+    \path (p4mu.south) ++ (1.5,-1em)
+      node[anchor=north,color=Bittersweet!85] (p4mutext)
+      {\textsf{\footnotesize 分子系综总偶极矩}};
+    \draw[color=Bittersweet] (p4mu.south) |- (p4mutext.north);
+  \end{tikzpicture}
+
+  \[
+    H_{\mathrm{mol}}
+    =\sum_{i=1}^{N}
+      \physmark{sintefgreen}{p3Hi}{H_i}
+      \bigl(\physmark{OliveGreen}{p3qi}{\bm q_i},
+      \physmark{sintefdarkgreen}{p3Qi}{\bm Q_i}\bigr)
+    =\sum_y
+      \physmark{sintefdarkgreen}{p3ey}{\hbar\Omega_y|y\rangle\langle y|}.
+  \]
+  \begin{tikzpicture}[overlay,remember picture,>=stealth,
+      nodes={align=center,inner ysep=1pt,font=\scriptsize},<-]
+    \path (p3qi.south) ++ (-0.55,-1.5em)
+      node[anchor=north,color=OliveGreen!85] (p3qitext)
+      {\textsf{\footnotesize 电子}};
+    \draw[color=OliveGreen] (p3qi.south) |- (p3qitext.north);
+    \path (p3Qi.south) ++ (0.55,-1.5em)
+      node[anchor=north,color=sintefdarkgreen!85] (p3Qitext)
+      {\textsf{\footnotesize 核}};
+    \draw[color=sintefdarkgreen] (p3Qi.south) |- (p3Qitext.north);
+    \path (p3ey.south) ++ (0.85,-1.5em)
+      node[anchor=north,color=sintefdarkgreen!85] (p3eytext)
+      {\textsf{\footnotesize 本征能量与多体本征态}};
+    \draw[color=sintefdarkgreen] (p3ey.south) |- (p3eytext.north);
+  \end{tikzpicture}
+  \vspace{1.2em}
+
+  {\centering\scriptsize
+    电子结构、核振动、非谐性与多能级跃迁仍保留在
+    $H_i(\bm q_i,\bm Q_i)$ 和 $\hat\mu_i$ 中。\par}
+  \papersource{Yuen-Zhou \& Koner, JCP 160, 154107 (2024), Eqs.~(1)--(5).}
+\end{frame}
+
+\begin{frame}[c]{相同二能级分子的集体亮态与暗态}
+  \small
+  $N$ 个相同二能级分子、均匀单分子耦合 $g$、单激发子空间 定义亮态与暗态：
+
+  \vspace{0.2em}
+  {\centering\normalsize
+    \(\displaystyle
+      |B\rangle=\frac{1}{\sqrt N}\sum\nolimits_{j=1}^{N}|e_j\rangle,
+    \qquad
+      \langle D_\mu|B\rangle=0
+    \)
+    \par}
+
+  \vspace{0.2em}
+  {
+    集体亮态是单激发在 $N$ 个分子之间的对称相干叠加；在相同二能级分子与旋波近似下
+
+    ( Tavis--Cummings):\par}
+
+  \vspace{1.5em}
+
+  {\centering\small
+    \(\displaystyle
+      \begin{aligned}
+        V_{\mathrm{RWA}}
+          &=\hbar g\sum\nolimits_{j=1}^{N}
+            \left(a^\dagger\sigma_j^-+a\sigma_j^+\right),
+        \qquad
+        B^\dagger
+          =\frac{1}{\sqrt N}\sum\nolimits_{j=1}^{N}\sigma_j^+,
+        \\ \\
+        V_{\mathrm{RWA}}
+          &=\hbar\physmark{Plum}{p5Gcoupling}{G}
+            \left(a^\dagger B+aB^\dagger\right),
+        \qquad
+        \physmark{Plum}{p5G}{G}
+          =\physmark{NavyBlue}{p5g}{g}
+            \physmark{OliveGreen}{p5sqrtN}{\sqrt N}.
+      \end{aligned}
+    \)
+    \par}
+  \begin{tikzpicture}[overlay,remember picture,>=stealth,
+      nodes={align=center,inner ysep=1pt},<-]
+    \path (p5G.north) ++ (-1.25,-2.6em)
+      node[anchor=east,color=Plum!85] (p5Gtext)
+      {\textsf{\footnotesize 集体耦合}};
+    \draw[color=Plum] (p5G.south) |- (p5Gtext.east);
+    \path (p5g.north) ++ (0,-3.6em)
+      node[anchor=south,color=NavyBlue!85] (p5gtext)
+      {\textsf{\footnotesize 单分子耦合}};
+    \draw[color=NavyBlue] (p5g.south) -- (p5gtext.north);
+    \path (p5sqrtN.north) ++ (1.05,-2.6em)
+      node[anchor=west,color=OliveGreen!85] (p5sqrtNtext)
+      {\textsf{\footnotesize 集体相干增强}};
+    \draw[color=OliveGreen]
+      (p5sqrtN.south) |- (p5sqrtNtext.west);
+  \end{tikzpicture}
+
+  \vspace{2.0em}
+\end{frame}
+
+\begin{frame}[c]{腔光子与集体亮态杂化形成分子极化激元}
+  \small
+  集体亮态 $|B\rangle$与腔光子态构成基矢
+  $|1_{\mathrm{cav}},\mathrm{GS}\rangle$、$|0_{\mathrm{cav}},B\rangle$。
+
+  \vspace{0.8em}
+  {\large
+  \begin{equation*}
+    H_{\mathrm{1exc}}=\hbar
+    \begin{pmatrix}
+      \physmark{Plum}{p6wc}{\omega_c} &
+      \physmark{Bittersweet}{p6G}{G}\\[0.2em]
+      G &
+      \physmark{NavyBlue}{p6w0}{\omega_0}
+    \end{pmatrix}.
+  \end{equation*}}
+
+  \begin{tikzpicture}[overlay,remember picture,>=stealth,
+      nodes={align=center,inner ysep=1pt},<-]
+
+    \path (p6wc.north) ++(-1.3,1.1em)
+      node[anchor=south,color=Plum!85] (p6wctext)
+      {\textsf{\footnotesize 单模腔频率}};
+    \draw[color=Plum] (p6wc.north) |- (p6wctext.south);
+
+    \path (p6w0.south) ++(1.4,-1.5em)
+      node[anchor=north,color=NavyBlue!85] (p6w0text)
+      {\textsf{\footnotesize 集体亮态频率}};
+    \draw[color=NavyBlue] (p6w0.south) |- (p6w0text.north);
+
+    \path (p6G.east) ++(1.4,1.1em)
+      node[anchor=west,color=Bittersweet!85] (p6Gtext)
+      {\textsf{\footnotesize 集体耦合}\\[-0.1em]
+       \textsf{\footnotesize $G=g\sqrt{N}$}};
+    \draw[color=Bittersweet] (p6G.north) |- (p6Gtext.west);
+
+  \end{tikzpicture}
+
+  \vspace{1.4em}
+
+  {\large
+  \begin{equation*}
+    \omega_\pm=\frac{\omega_c+\omega_0}{2}
+    \pm\sqrt{G^2+\frac{(\omega_c-\omega_0)^2}{4}}.
+  \end{equation*}}
+
+  \vspace{0.4em}
+
+  {\footnotesize
+    分子极化激元：腔光子模式与分子集体激发强耦合杂化的光--物质混合本征模（UP/LP）。\par}
+
+\end{frame}
+
+\begin{frame}[c]{分子极化与线性极化率}
+  \small
+  在线性响应近似下，只保留外场诱导极化的一阶项：
+
+  {\centering\large
+    \[
+      \physmark{Plum}{p7dP}{\delta P^{(1)}(t)}
+      =
+      \int_{-\infty}^{t}
+      \physmark{NavyBlue}{p7chi1}{\chi^{(1)}(t-t')}
+      \physmark{Bittersweet}{p7Eweak}{E(t')}\,dt' .
+    \]
+    \par
+  }
+
+  \begin{tikzpicture}[
+      overlay,
+      remember picture,
+      >=stealth,
+      nodes={align=center,inner ysep=1pt},
+      <-
+    ]
+
+    \path (p7dP.south) ++(-1.15,-0.75em)
+      node[
+        anchor=north,
+        color=Plum!85
+      ] (p7dPtext)
+      {\textsf{\footnotesize 一阶诱导极化}};
+
+    \draw[color=Plum]
+      (p7dP.south) |- (p7dPtext.north);
+
+    \path (p7chi1.south) ++(0,-0.75em)
+      node[
+        anchor=north,
+        color=NavyBlue!85
+      ] (p7chi1text)
+      {\textsf{\footnotesize 线性极化响应}};
+
+    \draw[color=NavyBlue]
+      (p7chi1.south) |- (p7chi1text.north);
+
+    \path (p7Eweak.south) ++(1.05,-0.75em)
+      node[
+        anchor=north,
+        color=Bittersweet!85
+      ] (p7Eweaktext)
+      {\textsf{\footnotesize 弱外电场}};
+
+    \draw[color=Bittersweet]
+      (p7Eweak.south) |- (p7Eweaktext.north);
+
+  \end{tikzpicture}
+
+  \vspace{1.4em}
+
+  \small
+  $\chi^{(1)}(t-t')$ 描述分子受到时刻 $t'$ 的微弱电场扰动后，
+  在时刻 $t$ 保留下来的偶极响应。
+
+  {\centering\large
+  \[
+    \delta P^{(1)}(\omega)
+    =
+    \chi^{(1)}(\omega)E(\omega).
+  \]
+  \par}
+
+  \vspace{0.5em}
+  \small
+  $\chi^{(1)}(\omega)$ 表征分子对频率为 $\omega$ 的弱外场产生的
+  线性偶极响应强度与相位。
+
+  \vspace{0.3em}
+  {\color{gray}
+    $\chi(\omega)$ 可由微观动力学或线性响应理论求得又或者线性吸收、色散或复折射率实验。
+  }
+
+\end{frame}

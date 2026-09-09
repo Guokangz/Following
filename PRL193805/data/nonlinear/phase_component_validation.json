@@ -1,0 +1,10 @@
+{
+  "model": "explicit SM S.39-S.43 2LS phase hierarchy",
+  "phase_convention": "input envelope multiplied by exp(-i Phi); extraction uses exp(+i v.Phi)",
+  "metrics": {
+    "explicit_components_sum_vs_unresolved_max_error": 1.3916121944027027e-11,
+    "phase_cycle_grid_per_pulse": 6,
+    "phase_cycling_01_max_error": 9.587557310564154e-11,
+    "phase_cycling_2m1_max_error": 6.451949261312984e-11
+  }
+}

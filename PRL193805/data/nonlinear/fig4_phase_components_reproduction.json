@@ -1,0 +1,69 @@
+{
+  "paper": "Reitz, Koner, and Yuen-Zhou, PRL 134, 193803 (2025)",
+  "figure": "4(a,b)",
+  "equations": [
+    9,
+    10,
+    "SM S.29-S.35",
+    "SM S.39-S.43 with g23=0"
+  ],
+  "parameters": {
+    "kappa": 1.0,
+    "sqrtN_g": 3.0,
+    "gamma": 0.0,
+    "gamma_phi": 0.1,
+    "tau_w_standard_deviation": 0.1,
+    "pump_arrival": 2.0,
+    "all_detunings": 0.0
+  },
+  "numerical": {
+    "time_step": 0.005,
+    "end_time": 24.0,
+    "zero_padding_factor": 4,
+    "decay_peak_fit_window": [
+      0.3,
+      6.0
+    ],
+    "decay_definition": "local maxima of the polariton-window RMS; the pointwise RMS oscillates due to UP/LP beating"
+  },
+  "metrics": {
+    "component_01_raw_range": [
+      -0.06948256693623794,
+      0.08846144390590524
+    ],
+    "component_2m1_raw_range": [
+      -0.06221139082278213,
+      0.11527870849876994
+    ],
+    "timestep_convergence_delays": [
+      0.0,
+      1.0,
+      2.0,
+      4.0,
+      8.0
+    ],
+    "dt_0p005_vs_0p0025_max_errors_01_2m1": [
+      [
+        4.183119280964931e-07,
+        3.98221025522949e-07,
+        4.74643113798634e-07,
+        1.1287039928193146e-06,
+        4.418453724140681e-06
+      ],
+      [
+        2.0915596405518544e-07,
+        1.9306719979683695e-07,
+        1.609351979979523e-07,
+        9.314391124365384e-08,
+        2.3261558453860527e-08
+      ]
+    ],
+    "fitted_dqc_decay_time_kappa_inverse": 1.8123002636086782,
+    "fit_log_space_r_squared": 0.9643677790844589,
+    "paper_order_of_magnitude_kappa_plus_gamma_phi_inverse": 0.9090909090909091,
+    "sm_hierarchy_dqc_envelope_time_2_over_kappa_plus_gamma_phi": 1.8181818181818181,
+    "relative_difference_from_sm_hierarchy_envelope_time": -0.003234855015226934,
+    "envelope_01_at_delay8": 0.01766872303614193,
+    "envelope_2m1_at_delay8": 0.0002793373361679621
+  }
+}

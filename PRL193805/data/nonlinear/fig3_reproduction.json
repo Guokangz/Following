@@ -1,0 +1,73 @@
+{
+  "paper": "Reitz, Koner, and Yuen-Zhou, PRL 134, 193803 (2025)",
+  "figure": "3(a-d)",
+  "equations": [
+    2,
+    3,
+    6,
+    8,
+    "SM S.7-S.20"
+  ],
+  "parameters": {
+    "kappa": 1.0,
+    "sqrtN_g": 3.0,
+    "gamma": 0.0,
+    "gamma_phi": [
+      0.0,
+      1.0
+    ],
+    "tau_w_standard_deviation": 0.05,
+    "omega_c_minus_omega_0": 0.0,
+    "omega_p_minus_omega_0": 0.0,
+    "omega_probe_minus_omega_0": 0.0,
+    "pump_arrival": 2.0
+  },
+  "numerical": {
+    "time_step": 0.005,
+    "end_time": 20.0,
+    "zero_padding_factor": 4,
+    "input_amplitude_factor_eta_p_squared": 1.0
+  },
+  "metrics": {
+    "raw_dt_min_each_dephasing": [
+      -0.01796961955871889,
+      -0.017932825759920775
+    ],
+    "raw_dt_max_each_dephasing": [
+      0.033765453466779824,
+      0.02870921638422932
+    ],
+    "timestep_convergence_delays": [
+      0.0,
+      2.0,
+      4.0,
+      6.0
+    ],
+    "dt_0p005_vs_0p0025_max_errors": [
+      [
+        6.592339745984527e-07,
+        3.597164937880343e-07,
+        1.6771398265915533e-07,
+        8.397302684714364e-08
+      ],
+      [
+        5.029984826571132e-08,
+        6.077086691985353e-08,
+        1.5720711831271328e-07,
+        3.7709769930543285e-07
+      ]
+    ],
+    "late_delay_envelope_at_6": [
+      0.0007131068197704843,
+      0.006053199871680334
+    ],
+    "late_pump_population_order2_at_t10": [
+      0.000251218214317422,
+      0.007475308680207424
+    ],
+    "late_pump_polarization_abs_sq_at_t10": [
+      0.00025121821460993355,
+      4.282643707812247e-06
+    ]
+  }
+}

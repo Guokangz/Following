@@ -1,0 +1,16 @@
+{
+  "paper": "Reitz, Koner, and Yuen-Zhou, PRL 134, 193803 (2025)",
+  "figures": [
+    "1(b,c)",
+    "2",
+    "4(c,d)"
+  ],
+  "source_equations": [
+    "PRL 4-6",
+    "PRL 9-10",
+    "SM S.29-S.35",
+    "SM S.39-S.43"
+  ],
+  "construction": "programmatic matplotlib vector drawings; no paper raster content",
+  "fig1_storage_trace": "computed from the first-order coupled cavity-molecule equations with G=3 kappa"
+}

@@ -1,0 +1,184 @@
+\documentclass[11pt]{ctexart}
+
+\usepackage[a4paper,margin=1.6cm]{geometry}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+\linespread{1.05}
+\pagestyle{plain}
+\ctexset{section={beforeskip=8pt, afterskip=4pt}}
+
+\newcommand{\framecue}[1]{%
+  \par\smallskip
+  \noindent\textbf{#1}\quad
+}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 分子极化激元报告：逐页物理问题提示}
+\end{center}
+
+\section*{第一节：分子极化激元与线性响应}
+
+\framecue{Frame：微观模型---分子 Hamiltonian 与腔场偶极耦合}
+为什么体系要拆成 \(H=H_0+V\)，自由 Hamiltonian 和光--物质耦合分别包含什么物理；
+\(H_i(q_i,Q_i)\) 与 \(\sum_y\hbar\Omega_y|y\rangle\langle y|\) 是什么关系，
+\(q_i,Q_i\) 分别代表哪些自由度；
+为什么虽然随后会用 2LS 做例子，但原始模型本身仍然保留振动、非谐性和多能级跃迁；
+\(\lambda\)、单分子耦合 \(g\) 和集体耦合 \(G\) 有什么区别；
+为什么腔耦合的是总偶极矩 \(\hat\mu=\sum_i\hat\mu_i\)；
+为什么这种总偶极耦合最终会允许出现集体亮态？
+
+\framecue{Frame：相同二能级分子的集体亮态与暗态}
+为什么 \(|B\rangle=N^{-1/2}\sum_j|e_j\rangle\) 是与腔耦合的集体亮态；
+为什么满足 \(\langle D_\mu|B\rangle=0\) 的状态不直接与腔场耦合；
+为什么集体耦合从单分子的 \(g\) 增强为 \(G=g\sqrt N\)？
+
+\framecue{Frame：腔光子与集体亮态杂化形成分子极化激元（LP/UP）}
+\(H_{\rm 1exc}=\hbar\left(\begin{smallmatrix}\omega_c&G\\G&\omega_0\end{smallmatrix}\right)\)
+中两个对角元和非对角元分别表示什么；
+为什么令本征方程的 determinant 为零可以得到 LP/UP 的共振频率；
+\(G\) 是体系内部的 cavity--bright-state coupling，为什么它与外部 probe 强度无关；
+LP/UP 是被 probe ``产生''的，还是强耦合体系本来就存在的混合本征模？
+
+\framecue{Frame：分子极化与线性极化率}
+``线性响应''到底是对什么量做一阶展开；
+为什么 linear response 并不要求内部 cavity--molecule coupling \(G\) 很弱；
+\(\chi(t-t')\) 与 \(\chi(\omega)\) 分别描述什么物理；
+probe 在第一篇中究竟是什么：体系参数、腔频率，还是外部弱测试场？
+
+\section*{第二节：\(N\rightarrow\infty\) 极限下的线性光谱}
+
+\framecue{Frame：有效过程及初态条件}
+为什么要求初始态满足光子与分子可分离；
+为什么 \(\rho_{\rm mol}\) 只需要是 \(H_{\rm mol}\) 的 stationary state，而不一定要求 thermal equilibrium；
+这里为什么把 cavity photon 看成 system，而把 molecular ensemble 看成 environment？
+
+\framecue{Frame：分子系综作为腔光子的有效环境---两时刻偶极关联 \(C_2(t)\)}
+\(C_2(t)\) 的物理意义是什么；
+为什么独立分子条件下，总偶极关联可以化成单分子关联的和；
+\(N\rightarrow\infty\) 时，为什么可以用具有相同两时刻关联函数的 effective harmonic environment 替代复杂分子环境？
+
+\framecue{Frame：谐振子环境的两时刻关联与有效谱密度 \(J^{\rm eff}\)}
+\(J^{\rm eff}(\omega)\) 到底描述环境的什么信息；
+为什么只要匹配 \(C_2^{\rm eff}(t)=C_2(t)\) 就能够恢复腔光子的线性动力学；
+harmonic bath 在这里是真实分子的物理近似，还是建立等效映射的数学工具？
+
+\framecue{Frame：从 \(C_2\) 到 \(\chi\)---有效谱密度由分子线性极化率给出}
+为什么不能直接说 \(C_2=\operatorname{Im}\chi\)；
+\(C_2\) 中的布居权重与 \(\chi\) 中的 \(p_y-p_z\) 有什么不同；
+为什么最后却可以得到 \(J^{\rm eff}(\omega)=\hbar\Theta(\omega)\operatorname{Im}\chi(\omega)\)；
+为什么实际算线性 cavity spectrum 时已经不需要显式构造 harmonic bath？
+
+\framecue{Frame：\(N\to\infty\) 下：弱 probe 读取微腔线性光谱（\(T/R/A\)）}
+扫描的 \(\omega\) 是 probe frequency 还是 cavity eigenfrequency；
+\(\omega_{\rm ph}\) 是什么固定量；
+为什么横轴 \(\omega-\omega_{\rm ph}\) 可以为负，而实际光频率并没有变成负数；
+\(T+R+A=1\) 表示怎样的能量重新分配；
+为什么同一个 polariton resonance 可以同时表现为 \(T,R,A\) 中的峰或谷？
+
+\framecue{Frame：二能级分子线性响应恢复 LP/UP 双峰}
+为什么把 \(\chi_{\rm 2LS}(\omega)\) 代入 cavity denominator 后会重新得到 LP/UP 的本征频率；
+为什么``denominator=0''实际上是 coupled-system eigenfrequency condition，而不是单纯数学技巧；
+有损耗时 denominator 不会在实轴真正发散，那么实验峰位应怎样理解；
+仅看到两个峰是否足以证明 strong coupling？线宽和 avoided crossing 为什么重要？
+
+\framecue{Frame：二能级极化激元的布居与无序效应}
+为什么 \(p_g-p_e\) 变小会使线性极化率减弱，并导致 Rabi splitting contraction；
+这里是单分子耦合 \(g\) 真的变小了吗；
+为什么增大 \(G/\sigma\) 可以减弱 inhomogeneous broadening 对 polariton linewidth 的影响；
+为什么这两个例子改变的只是 \(\chi(\omega)\)，而 \(T/R/A\) 的通用 input--output 结构没有改变？
+
+\section*{第三节：从稳态响应到超快非平衡动力学}
+
+\framecue{Frame：从稳态线性响应到超快 pump--probe}
+第一篇的 \(\chi(\omega)\rightarrow T,R,A\) 为什么适合 stationary / quasi-stationary system；
+超短 delay 时为什么不能只使用固定的 \(\chi(\omega)\)；
+cavity lifetime 为什么会使 intracavity pump 和 probe 的作用时间比外部 pulse envelope 更长；
+为什么外部 pump 虽然先到达，但某些 Liouville-space interaction ordering 中 probe-generated cavity field 仍可能先作用？
+
+\framecue{Frame：\(N\to\infty\) 极限---腔场与单分子态自洽反馈（mean-field 与 Liouville 空间）}
+\(a\rightarrow\alpha(t)\) 的 mean-field replacement 实际上做了什么近似；
+为什么只需要演化一个 representative single-molecule density matrix \(\rho(t)\)；
+为什么 cavity feedback 中却出现总极化 \(NP\)；
+``self-consistent''到底是什么意思，是否等同于 phenomenological；
+为什么要把 density matrix vectorize 成 \(\vec\rho\)；
+\(\mathcal L_0\) 包含哪些自由分子动力学和 dissipative dynamics；
+\(\mathcal L_\mu\) 表示什么光--物质 interaction；
+Liouville-space 写法是否改变了原来的 master equation 物理？
+
+\framecue{Frame：腔内场与分子态的微扰展开}
+为什么要同时展开 \(\alpha(t)\) 和 \(\rho(t)\)；
+为什么 \(\delta_{n1}\) 表示外部 laser input 只直接驱动一阶 cavity field；
+那么 \(\alpha^{(2)},\alpha^{(3)},\ldots\) 是由什么产生的；
+为什么一阶 \((\rho^{(1)},\alpha^{(1)})\) 正好恢复第一篇的 linear polariton response；
+有 cavity feedback 是否就一定意味着 nonlinear response？
+
+\framecue{Frame：腔反馈产生额外高阶演化路径（路径树与二阶例子）}
+求和 \(\sum_j\alpha^{(n-j)}\mathcal L_\mu\rho^{(j)}\) 究竟枚举了什么；
+为什么每个低阶 \(\rho^{(j)}\) 又可以继续展开成一棵子树；
+为什么分析路径时更适合从目标 \(\rho^{(n)}\) 向下追溯，而实际数值求解却要从低阶向高阶；
+路径图中的不同 branch 是否代表概率、是否等权，branch 长短能否理解成实际演化时间长短；
+为什么 \(-i\mathcal L_0\rho^{(n)}\) 不产生新的分支，
+自由演化和 interaction 在微分方程中是同时存在的，为什么在路径展开中又可以画成
+interaction--free evolution--interaction；
+\(\alpha^{(1)}\rho^{(1)}\) 与 \(\alpha^{(2)}\rho^{(0)}\) 分别是什么物理来源，
+``连续两次一阶相互作用''是否意味着两束不同 laser；
+为什么 \(\rho^{(0)}\xrightarrow{\alpha^{(2)}}\rho^{(2)}\) 虽然树上只有一步，却不代表这个物理过程真的更快、更简单；
+高阶 cavity field 与高阶 polarization 为什么形成 self-consistent relation；
+同一微扰阶数中的不同路径为什么不一定具有相同大小？
+
+\section*{第四节：泵浦--探测与超快非线性响应}
+
+\framecue{Frame：Pump--probe---对 pump 与 probe 分别做微扰展开}
+为什么原来的单指标 \(n\) 要推广成 \((n,m)\)；
+两个指标分别记录 pump 和 probe 的什么；
+\(\tau_\Delta=\tau_{p'}-\tau_p\) 控制的是外部脉冲到达时间，还是 intracavity interaction 的严格时间顺序；
+pump 和 probe 在实验中的物理角色分别是什么？
+
+\framecue{Frame：最低三阶 pump--probe 响应与差分透射}
+为什么对于初始基态的理想 2LS，最低 pump-induced probe correction 是 \(p^2p'\)；
+为什么一次 pump interaction 主要产生 optical coherence，而两次 pump interaction 才可以产生 population change；
+为什么 \(\alpha^{(2)(1)}\) 是总 third-order pump--probe cavity response，而不是单独的 cavity-feedback pathway，
+这个三阶响应中普通 sequential first-order pathways 与 cavity-feedback-added pathways 是怎样同时存在的；
+实验真正测量的是 \(\rho^{(2)(1)}\) 还是 optical transmission；
+为什么需要先从 \(\alpha(\omega)\) 通过 standard input--output theory 得到 \(T_{p'}(\omega)\)；
+\(\Delta T=T^{\rm pump\,on}-T^{\rm pump\,off}\) 的物理意义是什么；
+为什么最低阶中出现 \(2\operatorname{Re}\left[\alpha^{(0)(1)*}\alpha^{(2)(1)}\right]\)；
+为什么可以把 \(\alpha^{(0)(1)}\) 理解为 local oscillator？
+
+\framecue{Frame：Fig.~3---差分透射读取相干与布居的时间尺度}
+Fig.~3 上排和下排分别画的是什么物理量；
+上排的横轴 frequency、纵轴 delay 与下排的真实 propagation time 有什么区别；
+\(\gamma_\phi=0\) 时为什么 DT 会随 delay 振荡；
+\(\gamma_\phi=\kappa\) 时为什么 polarization / coherence 很快衰减，而 population 仍可以保留；
+pure dephasing 为什么不直接等价于 population decay；
+为什么 long-delay 下即使 optical coherence 已经消失，DT spectrum 仍然发生变化；
+Fig.~3 展示的是总 third-order DT dynamics，为什么不能把它解释成单独验证 cavity-feedback pathway；
+当前 raw collinear DT 是否已经分离出了单独 excitation pathway？
+
+\section*{总结页}
+
+\framecue{Frame：总结---两篇理论是一条连续的物理主线}
+为什么第二篇在 \(n=1\) 时恢复第一篇；
+第一篇的核心变量为什么是 \(\chi(\omega)\)，第二篇则需要 \(\rho(t),\alpha(t)\)；
+如何用一条连续物理链连接 \(\chi(\omega)\rightarrow T,R,A\) 与
+\(\rho(t),\alpha(t)\rightarrow\Delta T(\omega,\tau_\Delta)\rightarrow\) coherence / population dynamics？
+
+\section*{理论补充}
+
+\framecue{Frame：二能级分子---从光学相干到线性极化率}
+为什么 \(\rho_{eg}^{(1)}\) 直接决定 linear polarization；
+\(p_g-p_e\)、\(\omega_0\)、\(\gamma/2\)、\(G^2\) 分别控制 response 的什么部分；
+为什么 population difference 可以改变 linear susceptibility，但不会直接改变 bare coupling \(g\)？
+
+\framecue{Frame：理论补充---标准腔输入--输出关系}
+\(\kappa_L,\kappa_R\) 分别代表什么 cavity channel；
+为什么 linear molecular feedback 可以写进 cavity response denominator；
+intracavity amplitude 如何转换成 \(r,\ t,\ R,\ T,\ A\)；
+第一篇的 \(T/R/A\) 与第四节 differential transmission 中的 input--output relation 是不是同一套物理？
+
+\end{document}

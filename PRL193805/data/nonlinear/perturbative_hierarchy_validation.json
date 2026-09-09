@@ -1,0 +1,55 @@
+{
+  "model": "2LS rotating-frame semiclassical hierarchy, direct order propagation",
+  "max_order": 3,
+  "parameters": {
+    "kappa": 1.0,
+    "sqrtN_g": 3.0,
+    "gamma": 0.2,
+    "gamma_phi": 0.1,
+    "pulse_center": 2.0,
+    "pulse_width_standard_deviation": 0.2
+  },
+  "metrics": {
+    "eta_values": [
+      0.04,
+      0.06,
+      0.09,
+      0.135,
+      0.2
+    ],
+    "cavity_max_errors": [
+      5.062939789635124e-10,
+      3.8456911249235e-09,
+      2.9212478736342917e-08,
+      2.220072894375258e-07,
+      1.5870392596345484e-06
+    ],
+    "coherence_max_errors": [
+      4.523274419951373e-10,
+      3.4357311396934764e-09,
+      2.6100423985292442e-08,
+      1.983393007227996e-07,
+      1.41760673796551e-06
+    ],
+    "population_max_errors": [
+      3.059775924430907e-08,
+      1.5491977028403675e-07,
+      7.844941589022045e-07,
+      3.973920137854145e-06,
+      1.916774005996302e-05
+    ],
+    "total_max_errors": [
+      3.059775924430907e-08,
+      1.5491977028403675e-07,
+      7.844941589022045e-07,
+      3.973920137854145e-06,
+      1.916774005996302e-05
+    ],
+    "fitted_cavity_error_power": 5.001795497466847,
+    "fitted_population_error_power": 4.0013591777518815,
+    "fitted_total_error_power": 4.0013591777518815,
+    "max_abs_alpha_order_2": 0.0,
+    "max_abs_population_order_1": 0.0,
+    "max_abs_population_order_3": 0.0
+  }
+}

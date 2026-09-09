@@ -1,0 +1,62 @@
+\documentclass[dvipsnames]{beamer}
+
+\usepackage{amsmath,amssymb,bm}
+\usetheme{sintef}
+
+\usetikzlibrary{arrows,shapes,tikzmark,calc}
+
+\usepackage{ctex}
+\usepackage{fontspec}
+\newCJKfontfamily\titlefont[
+  BoldFont=LXGWZhenKaiGB-Regular.ttf,
+  Path=fonts/
+]{LXGWWenKai-Regular.ttf}
+\usefonttheme[onlymath]{serif}
+
+% fontspec resets \hbar at document start; restore the AMS glyph afterwards.
+\AddToHook{begindocument/end}{\let\hbar\hslash}
+
+% Reuse the template's restrained formula-annotation mechanism.
+\newcommand{\highlight}[2]{\colorbox{#1!15}{#2}}
+\newcommand{\physmark}[3]{%
+  \tikzmarknode{#2}{\highlight{#1}{\color{black}$#3$}}%
+}
+
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\papersource}[1]{%
+  \par\vspace{0.2em}\hfill{\tiny\color{gray}#1}\par
+}
+\newcommand{\keypoint}[1]{%
+  \begin{block}{核心结论}
+    #1
+  \end{block}
+}
+
+
+
+\title{{\fontsize{22}{25}\selectfont
+  分子极化激元的\\线性响应与超快动力学}}
+\subtitle{Linear Response and Ultrafast Dynamics of Molecular Polaritons}
+\author{郭晋康}
+\date{2026年9月8日}
+
+\begin{document}
+
+\maketitle
+
+\section{分子极化激元与线性响应}
+\input{sections/01_linear_response}
+
+\section{\texorpdfstring{$N\to\infty$}{N to infinity} 极限下的线性光谱}
+\input{sections/02_large_N}
+
+\section{从稳态响应到超快非平衡动力学}
+\input{sections/03_ultrafast}
+
+\section{泵浦--探测与超快非线性响应}
+\input{sections/04_nonlinear}
+
+\input{sections/05_summary}
+
+\end{document}

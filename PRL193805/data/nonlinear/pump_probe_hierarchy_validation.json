@@ -1,0 +1,20 @@
+{
+  "model": "2LS pump-probe hierarchy through (2)(1)",
+  "parameters": {
+    "kappa": 1.0,
+    "sqrtN_g": 3.0,
+    "gamma": 0.2,
+    "gamma_phi": 0.1,
+    "pump_center": 2.0,
+    "probe_center": 3.0,
+    "pulse_width_standard_deviation": 0.2
+  },
+  "fourier_convention": "1/sqrt(2pi) integral exp(+i omega t) f(t) dt",
+  "metrics": {
+    "gaussian_fft_max_error_abs_omega_below_15": 4.941739743737032e-16,
+    "full_two_pulse_probe_induced_vs_hierarchy_max_error": 3.882136110058033e-09,
+    "max_abs_alpha_01": 0.30149412801798686,
+    "max_abs_alpha_21": 0.061685346809422795,
+    "max_abs_forbidden_alpha_11": 0.0
+  }
+}

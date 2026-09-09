@@ -1,0 +1,40 @@
+{
+  "paper": "Yuen-Zhou and Koner, JCP 160, 154107 (2024)",
+  "figure": "5",
+  "equations": [
+    34,
+    44
+  ],
+  "parameters": {
+    "omega_ph": 0.0,
+    "omega_exc": 0.0,
+    "kappa": 0.1,
+    "gamma": 0.1,
+    "sqrtN_g": 1.0,
+    "omega_v": 0.3,
+    "S": 3.0
+  },
+  "metrics": {
+    "selected_m_max": 22,
+    "franck_condon_sum": 0.9999999999997933,
+    "omitted_weight_bound": 2.0672352718520415e-13,
+    "weighted_mean_m": 2.999999999995209,
+    "trial_m_max": [
+      6,
+      9,
+      12,
+      15,
+      18,
+      22
+    ],
+    "truncation_max_absorption_error": [
+      0.2640627992061714,
+      0.000885137888631593,
+      8.609652243474208e-06,
+      5.471068054152539e-08,
+      2.098584639398382e-10,
+      0.0
+    ],
+    "max_flux_error": 2.220446049250313e-16
+  }
+}

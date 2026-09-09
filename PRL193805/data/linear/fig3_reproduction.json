@@ -1,0 +1,52 @@
+{
+  "paper": "Yuen-Zhou and Koner, JCP 160, 154107 (2024)",
+  "figure": "3(a,b)",
+  "equations": [
+    34,
+    37,
+    38
+  ],
+  "frequency_units": "arbitrary",
+  "frequency_axis": "omega - omega_ph",
+  "parameters": {
+    "omega_ph": 0.0,
+    "omega_exc": 0.0,
+    "kappa": 0.1,
+    "gamma": 0.3,
+    "sqrtN_g_zero_temperature": 2.0,
+    "kappa_left": 0.05,
+    "kappa_right": 0.05,
+    "balanced_cavity": true,
+    "balanced_cavity_status": "inferred from paper figure convention",
+    "temperature_ratios_DeltaE_over_kBT": [
+      "infinity",
+      1.1,
+      0.1
+    ]
+  },
+  "conventions": {
+    "cavity_denominator": "+ i kappa/2",
+    "molecular_denominator": "+ i gamma/2",
+    "thermal_G_squared_scaling": "tanh(DeltaE/(2 k_B T))"
+  },
+  "metrics": {
+    "max_abs_T_plus_R_plus_A_minus_1": 2.220446049250313e-16,
+    "complex_poles": [
+      [
+        -1.9993749023132206,
+        -0.10000000000000006
+      ],
+      [
+        1.999374902313221,
+        -0.09999999999999998
+      ]
+    ],
+    "absorption_peak_positions": [
+      -1.9969999999999999,
+      1.9969999999999999
+    ],
+    "absorption_peak_splitting": 3.9939999999999998,
+    "pole_real_part_splitting": 3.9987498046264416,
+    "left_right_peak_symmetry_error": 0.0
+  }
+}
