@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# LaTeX regenerable artifacts
+*.aux
+*.log
+*.out
+*.nav
+*.snm
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.xdv
+*.bbl
+*.blg
+
+# Tool runtimes / intermediate workflow directories
+tmp/
+.pptx_tools/
+.qoder/
+talk/
+ppt/
+
+# Rebuildable deck output (archived deliverable is the exported named PDF)
+beamer/csu-beamer.pdf
